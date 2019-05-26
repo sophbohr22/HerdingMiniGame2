@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Game_Runner : MonoBehaviour
 {
-    public int num_chickens;
+    public int num_penguins;
 
     void Start()
     {
         GameObject g = GameObject.Find("rudy"); //the prefab for the 'rudy' chicken
-        for (int i = 0; i < num_chickens; i++)
+        for (int i = 0; i < num_penguins; i++)
         {
             GameObject c = GameObject.Instantiate(g); //instatiates rudy
-            c.name = "Chicken_" + i; //names the chicken object based on its number
+            c.name = "Penguin_" + i; //names the penguin object based on its number
             
             /*
-             * places all of the chickens in random start locations in the game area, ensures they
+             * places all of the penguins in random start locations in the game area, ensures they
              * won't spawn in a location outside of view
              */ 
             float y_val = Random.Range(1.0f, 4.0f);
             float z_val;
             float x_val;
 
-            if (i >= (num_chickens / 2))
+            if (i >= (num_penguins / 2))
             {
                 z_val = -3.0f;
                 x_val = Random.Range(-8.0f, 2.5f);
@@ -40,9 +40,9 @@ public class Game_Runner : MonoBehaviour
     /*
      * Decrements the count of the number of chickens 
      */ 
-    public void Decrement_Num_Chickens()
+    public void Decrement_Num_Penguins()
     {
-        num_chickens--;
+        num_penguins--;
     }
 
     /*
@@ -50,8 +50,8 @@ public class Game_Runner : MonoBehaviour
      * 
      * @return current chicken count
      */ 
-    public int Get_Num_Chickens()
+    public int Get_Num_Penguins()
     {
-        return num_chickens;
+        return num_penguins;
     }
 }
